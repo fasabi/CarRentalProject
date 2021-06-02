@@ -93,7 +93,6 @@ namespace Business.Concrete
         public IResult Update(CarImage carImage,IFormFile file)
         {
             IResult result = BusinessRules.Run(
-                CheckIfImageLimitExpired(carImage.CarId),
                 CheckIfImageExtensionValid(file),
                 CheckIfImageExists(carImage.Id)
                 );
